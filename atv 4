@@ -206,31 +206,280 @@ public class App {
 a altura. Em seguida, exiba se a pessoa está abaixo do peso, com peso normal, com sobrepeso,
 obesa ou muito obesa.
 
-
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Digite sua altura: ");
+        double alt = sc.nextDouble();
+        System.out.println("Digite o seu peso: ");
+        double peso = sc.nextDouble();
+        double imc = peso / (alt * alt);
+        if (imc <= 18.5) {
+            System.out.println("abaixo do peso");
+        }
+        else if (imc <= 24.9) {
+            System.out.println("peso ideal");
+        }
+        else if (imc <= 29.9) {
+            System.out.println("sobrepeso");
+        }
+        else if (imc <= 39.9) {
+            System.out.println("obeso");
+        }
+        else {
+            System.out.println("muito obeso");
+        }
+        sc.close();
+    }
+}
 
 10. Escreva um programa que receba um número de mês (1 a 12) e exiba o nome do mês
 correspondente.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Digite o numero do mes: ");
+        int num = sc.nextInt();
+        if (num == 1) {
+            System.out.println("Janeiro");
+        }
+        else if (num == 2) {
+            System.out.println("Fevereiro");
+        }
+        else if (num == 3) {
+            System.out.println("Março");
+        }
+        else if (num == 4) {
+            System.out.println("Abril");
+        }
+        else if (num == 5) {
+            System.out.println("Maio");
+        }
+        else if (num == 6) {
+            System.out.println("Junho");
+        }
+        else if (num == 7) {
+            System.out.println("Julho");
+        }
+        else if (num == 8) {
+            System.out.println("Agosto");
+        }
+        else if (num == 9) {
+            System.out.println("Setembro");
+        }
+        else if (num == 10) {
+            System.out.println("Outubro");
+        }
+        else if (num == 11) {
+            System.out.println("Novembro");
+        }
+        else if (num == 12) {
+            System.out.println("Dezembro");
+        }
+        sc.close();
+    }
+}
+
 11. Desenvolva um programa que leia o salário de um funcionário e calcule o valor do seu aumento.
 Para salários superiores a R$ 1.500,00, o aumento deve ser de 10%. Caso contrário, o aumento é de
 15%.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Digite o seu salário: ");
+        double sal = sc.nextDouble();
+        if (sal > 1500) {
+            sal = (sal * 0.1) + sal;
+            System.out.println(sal);
+        }
+        else {
+            sal = (sal * 0.15) + sal;
+            System.out.println(sal);
+        }
+        sc.close();
+    }
+}
+
 12. Receba um número inteiro do usuário e verifique se ele é divisível por 3 e por 5 ao mesmo tempo,
 exibindo uma mensagem apropriada.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Digite o numero: ");
+        int num = sc.nextInt();
+        if (num % 15 == 0) {
+            System.out.println("divisivel por 3 e 5");
+        }
+        else {
+            System.out.println("não é divisivel por 3 e 5");
+        }
+        sc.close();
+    }
+}
+
 13. Peça ao usuário que insira o dia da semana (por extenso) e, em seguida, exiba uma mensagem
 informando se é um dia útil ou um fim de semana.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Digite o dia da semana, por extenso: ");
+        String str = sc.nextLine();
+        if (str.equals("Segunda-Feira") || str.equals("Terça-Feira") || str.equals("Quarta-Feira") || str.equals("Quinta-Feira") || str.equals("Sexta-Feira")) {
+            System.out.println("dia útil");
+        }
+        else {
+            System.out.println("não é dia útil");
+        }
+        sc.close();
+    }
+}
+
 14. Elabore um programa que leia um número inteiro de 1 a 5 e exiba a mensagem "Muito bom",
 "Bom", "Regular", "Insuficiente" ou "Muito insuficiente", de acordo com o valor lido, utilizando
 switch/case.
 
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Digite um numero, entre 1 e 5: ");
+        int op = sc.nextInt();
+        switch (op) {
+            case 1: 
+                System.out.println("Muito insuficiente");
+                break;
+            case 2:
+                System.out.println("Insuficente");
+                break;
+            case 3:
+                System.out.println("Regular");
+                break;
+            case 4:
+                System.out.println("Bom");
+                break;
+            case 5:
+                System.out.println("Muito bom");
+                break;
+            default:
+                System.out.println("Escolha entre 1 e 5");
+                break;
+        }
+        sc.close();
+    }
+}
+
 15. Peça ao usuário que digite um número entre 1 e 7 e exiba o dia da semana correspondente (1 -
 Domingo, 2 - Segunda-feira, etc.).
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Digite um numero, entre 1 e 7: ");
+        int op = sc.nextInt();
+        switch (op) {
+            case 1: 
+                System.out.println("domingo");
+                break;
+            case 2:
+                System.out.println("segunda");
+                break;
+            case 3:
+                System.out.println("terça");
+                break;
+            case 4:
+                System.out.println("quarta");
+                break;
+            case 5:
+                System.out.println("quinta");
+                break;
+            case 6:
+                System.out.println("sexta");
+                break;
+            case 7:
+                System.out.println("sábado");
+                break;
+            default:
+                System.out.println("Escolha entre 1 e 7");
+                break;
+        }
+        sc.close();
+    }
+}
+
 16. Receba um número decimal do usuário e arredonde-o para o inteiro mais próximo usando a
 estrutura de controle try/catch para tratar exceções.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        try {
+            System.out.println("Digite um numero ");
+            double num = sc.nextDouble();
+            num = Math.round(num);
+            System.out.println(num);
+        }
+        catch (Exception e) {
+            System.out.println("Algo deu errado");
+        }
+        sc.close();
+    }
+}
+
 17. Peça ao usuário que insira a sua idade e verifique se ele é um bebê (0 a 1 ano), criança (1 a 12
 anos), adolescente (13 a 18 anos) ou adulto (mais de 18 anos).
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Digite sua idade");
+        int idade = sc.nextInt();
+        if (idade <= 1) {
+            System.out.println("bebê");
+        }
+        else if (idade <= 12) {
+            System.out.println("criança");
+        }
+        else if (idade <= 18) {
+            System.out.println("adolescente");
+        }
+        else {
+            System.out.println("adulto");
+        }
+        sc.close();
+    }
+}
+
 18. Peça ao usuário que insira o seu estado civil e, usando a estrutura switch/case, exiba uma
 mensagem informando se é solteiro, casado, divorciado ou viúvo.
+
+
+
 19. Solicite ao usuário dois números inteiros e, usando a estrutura switch/case, exiba o resultado da
 operação escolhida pelo usuário (1 - soma, 2 - subtração, 3 - multiplicação, 4 - divisão).
+
+
+
 20. Desenvolva um programa que leia o nome e a idade de uma pessoa. Utilize o bloco try/catch para
 garantir que a idade digitada seja um valor inteiro válido.
 21. Crie um programa que leia um valor em metros e o converta para centímetros, milímetros e
