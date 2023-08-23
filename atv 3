@@ -4,12 +4,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
-
-
         System.out.println("Informe seu nome: ");
         String nome = sc.nextLine();
-
-
         System.out.println("Bem vindo, " + nome);
     }
 }
@@ -79,17 +75,14 @@ public class App {
 
 6. Peça ao usuário que insira o seu ano de nascimento e, em seguida, exiba a sua idade.
 
+package hw;
 import java.util.Scanner;
-public class Main {
+public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
-
-
         System.out.println("Informe o ano em que você nasceu: ");
         int num = sc.nextInt();
         int result = 2023 - num;
-
-
         System.out.println("A sua idade é de: " + result);
         sc.close();
     }
@@ -98,19 +91,16 @@ public class Main {
 7. Peça ao usuário que digite seu primeiro nome e seu sobrenome separadamente. Em seguida,
 concatene-os em uma única string e exiba o nome completo.
 
+package hw;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
-
-
         System.out.println("Informe o seu primeiro nome: ");
         String nome = sc.nextLine();
         System.out.println("Informe o seu sobrenome: ");
         String sobrenome = sc.nextLine();
         String result = nome.concat(" ", sobrenome);
-
-
         System.out.println("O seu nome completo é: " + result);
         sc.close();
     }
@@ -118,58 +108,593 @@ public class Main {
 
 8. Solicite ao usuário uma sequência de números separados por espaço e exiba quantos números
 foram digitados.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        int cont = 0;
+        System.out.println("Escreva uma sequência de números separados por espaço, após escrever o último número digite espaço: ");
+        String s = sc.nextLine();
+        for (int i = 0; i != s.length(); i++) {
+            if (Character.isDigit(s.charAt(i)) && Character.isWhitespace(s.charAt(i+1))) {
+                cont++;
+            }
+        }
+        System.out.println("A quantidade de números foi de: " + cont);
+        sc.close();
+    }
+}
+
 9. Receba o nome de um animal digitado pelo usuário e exiba uma mensagem informando qual
 animal foi digitado.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Escreva o nome do animal: ");
+        String s = sc.nextLine();
+        System.out.println("O nome do animal é: " + s);
+        sc.close();
+    }
+}
+
 10. Peça ao usuário que digite o seu nome e o seu sobrenome. Em seguida, exiba o nome completo
 invertido (sobrenome, nome).
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Escreva o seu nome e sobrenome: ");
+        String s = sc.nextLine();
+        String[] divisor = s.split(" ");
+        int tam = divisor.length;
+        String[] nomeInvertido = new String[tam];
+        for (int i = tam - 1; i >= 0; i--) {
+            nomeInvertido[tam - 1 - i] = divisor[i]; 
+        }
+        for (int i = 0; i < tam; i++) {
+            System.out.print(nomeInvertido[i] + " ");
+        }
+        sc.close();
+    }
+}
+
 11. Receba uma string digitada pelo usuário e imprima o seu tamanho (número de caracteres).
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Digite uma string: ");
+        String s = sc.nextLine();
+        int tam = s.length();
+        System.out.println("O tamanho do string é de: " + tam);
+        sc.close();
+    }
+}
+
 12. Solicite ao usuário um número inteiro e exiba se ele é par ou ímpar.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Digite um número inteiro: ");
+        int num = sc.nextInt();
+        if (num % 2 == 0) {
+            System.out.println("É par");
+        }
+        else {
+            System.out.println("É ímpar");
+        }
+        sc.close();
+    }
+}
+
 13. Receba um número inteiro digitado pelo usuário e verifique se ele é positivo ou negativo.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Digite um número inteiro: ");
+        int num = sc.nextInt();
+        if (num >= 0) {
+            System.out.println("É positivo");
+        }
+        else {
+            System.out.println("É negativo");
+        }
+        sc.close();
+    }
+}
+
 14. Peça ao usuário que insira dois números e exiba o maior deles.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Digite dois números: ");
+        double num = sc.nextDouble();
+        double num2 = sc.nextDouble();
+        if (num > num2) {
+            System.out.println("O primeiro é maior");
+        }
+        else if (num == num2) {
+            System.out.println("Os números são iguais");
+        }
+        else {
+            System.out.println("O segundo número é maior");
+        }
+        sc.close();
+    }
+}
+
 15. Receba a altura e o peso de uma pessoa digitados pelo usuário. Em seguida, calcule o seu índice de
 massa corporal (IMC) utilizando a fórmula: IMC = peso / (altura * altura) e exiba o resultado.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Digite sua altura: ");
+        double alt = sc.nextDouble();
+        System.out.println("Digite o seu peso: ");
+        double peso = sc.nextDouble();
+        double imc = peso / (alt * alt);
+        System.out.println("IMC: " + imc);
+        sc.close();
+    }
+}
+
 16. Peça ao usuário que digite o seu nome e verifique se ele contém mais de 5 caracteres.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Digite o seu nome: ");
+        String nome = sc.nextLine();
+        int tam = nome.length();
+        if (tam > 5) {
+            System.out.println("Contém mais de 5 caracteres");
+        }
+        else {
+            System.out.println("Não contém mais de 5");
+        }
+        sc.close();
+    }
+}
+
 17. Solicite ao usuário que insira o seu estado civil e exiba uma mensagem apropriada (por exemplo:
 "Você é casado(a)", "Você é solteiro(a)", etc.).
 
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe o seu estado civil: ");
+        String s = sc.nextLine();
+        System.out.println("Você é " + s);
+        sc.close();
+    }
+}
+
 18. Receba a base e a altura de um retângulo digitados pelo usuário. Em seguida, calcule a sua área e
 exiba o resultado.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe a base: ");
+        float base = sc.nextFloat();
+        System.out.println("Informe a altura: ");
+        float altura = sc.nextFloat();
+        float area = base * altura / 2;
+        System.out.println("A área é de: " + area);
+        sc.close();
+    }
+}
+
 19. Peça ao usuário que digite a sua cidade e verifique se ela começa com a letra "S" (ou outra letra de
 sua escolha).
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe o nome de sua cidade: ");
+        String s = sc.nextLine();
+        char firstChar = s.charAt(0);
+        if (firstChar == 'S' || firstChar == 's') {
+            System.out.println("O nome da cidade começa com S");
+        }
+        else {
+            System.out.println("O nome não começa com S");
+        }
+        sc.close();
+    }
+}
+
 20. Solicite ao usuário que insira dois números decimais e calcule o resto da divisão entre eles.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe dois números decimais: ");
+        float num1 = sc.nextFloat();
+        float num2 = sc.nextFloat();
+        System.out.println(num1 % num2);
+        sc.close();
+    }
+}
+
 21. Solicite ao usuário um número decimal e converta-o em um número inteiro.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe um número decimal: ");
+        float num = sc.nextFloat();
+        int num2 = (int) Math.round(num);
+        System.out.println(num2);
+        sc.close();
+    }
+}
+
 22. Receba uma string contendo um número inteiro e some 10 a esse número, convertendo-o
 novamente para uma string antes de exibi-lo.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe um número inteiro: ");
+        String numStr = sc.nextLine();
+        int num = Integer.parseInt(numStr) + 10;
+        String str = num + "";
+        System.out.println(str);
+        sc.close();
+    }
+}
+
 23. Solicite ao usuário que digite uma data no formato "dd/mm/aaaa" e extraia o dia, o mês e o ano
 separadamente, convertendo-os em números inteiros.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe uma data no formato dd/mm/aaaa: ");
+        String str = sc.nextLine();
+        String[] divisor = str.split("/");
+        int tam = divisor.length;
+        String dia = " ";
+        String mes = " ";
+        String ano = " ";
+        for (int i = 0; i < tam; i++) {
+            dia = divisor[0];
+            mes = divisor[1];
+            ano = divisor[2];
+        }
+        System.out.println(dia + " " + mes + " " + ano);
+        sc.close();
+    }
+}
+
 24. Receba o nome de uma cidade do usuário e concatene-o com o nome do estado para formar uma
-mensagem completa, como "Você mora em [cidade], [estado].".
+mensagem completa, como "Você mora em [cidade], [estado]."
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe o nome de sua cidade: ");
+        String cidade = sc.nextLine();
+        System.out.println("Informe o nome do seu estado: ");
+        String estado = sc.nextLine();
+        String str = cidade.concat(" " + estado);
+        System.out.println("Você mora em: " + str);
+        sc.close();
+    }
+}
+
+
 25. Solicite ao usuário que insira seu ano de nascimento e concatene-o com uma mensagem de
 boas-vindas, como "Bem-vindo ao nosso programa, nascido em [ano de nascimento]!".
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe o ano do seu nascimento: ");
+        String ano = sc.nextLine();
+        String msg = "Bem-vindo ao nosso programa, nascido em ";
+        String str = msg.concat(ano);
+        System.out.println(str);
+        sc.close();
+    }
+}
+
 26. Receba um número inteiro e uma string do usuário. Em seguida, concatene-os em uma única
 string, separando-os com um espaço.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe uma string: ");
+        String str = sc.nextLine();
+        System.out.println("Informe um número: ");
+        int num = sc.nextInt();
+        String strNum = String.valueOf(num);
+        String strConcat = str.concat(" " + strNum);
+        System.out.println(strConcat);
+        sc.close();
+    }
+}
+
 27. Receba o nome de um produto digitado pelo usuário e concatene-o com o preço do produto,
 adicionando o símbolo de moeda da sua escolha.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe o nome do produto: ");
+        String str = sc.nextLine();
+        System.out.println("Informe o preço do produto: ");
+        float num = sc.nextFloat();
+        String strNum = String.valueOf(num);
+        String strConcat = str.concat(" " + "R$" + strNum);
+        System.out.println(strConcat);
+        sc.close();
+    }
+}
+
 28. Receba um número inteiro do usuário e concatene-o com uma mensagem, informando o dobro
 desse número.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe uma mensagem: ");
+        String str = sc.nextLine();
+        System.out.println("Informe um numero: ");
+        int num = sc.nextInt();
+        num = num * 2;
+        String strNum = String.valueOf(num);
+        String strConcat = str.concat(" " + strNum);
+        System.out.println(strConcat);
+        sc.close();
+    }
+}
+
 29. Receba uma string contendo um endereço de e-mail e concatene-a com uma mensagem de
 agradecimento personalizada.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe um endereço de email: ");
+        String str = sc.nextLine();
+        System.out.println("Informe uma mensagem: ");
+        String strMsg = sc.nextLine();
+        String strConcat = strMsg.concat(" " + str);
+        System.out.println(strConcat);
+        sc.close();
+    }
+}
+
 30. Receba dois números inteiros do usuário e exiba a soma, a diferença, o produto e o quociente
 (divisão inteira) entre eles.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe um numero: ");
+        int num1 = sc.nextInt();
+        System.out.println("Informe outro numero: ");
+        int num2 = sc.nextInt();
+        int soma = num1 + num2;
+        int dif = num1 - num2;
+        int mult = num1 * num2;
+        int quoc = num1 % num2;
+        System.out.println(soma + " " + dif + " " + mult + " " + quoc);
+        sc.close();
+    }
+}
+
 31. Peça ao usuário para digitar a base e a altura de um triângulo. Em seguida, calcule e exiba a área do
 triângulo.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe a base: ");
+        float base = sc.nextFloat();
+        System.out.println("Informe a altura: ");
+        float altura = sc.nextFloat();
+        float area = base * altura / 2;
+        System.out.println("A área é de: " + area);
+        sc.close();
+    }
+}
 32. Receba o raio de uma circunferência digitado pelo usuário e calcule o seu perímetro (2 * π * raio).
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe o raio: ");
+        double r = sc.nextInt();
+        double per = Math.PI * 2 * r;
+        per = Math.round(per);
+        System.out.println(per);
+        sc.close();
+    }
+}
+
 33. Receba a base e a altura de um retângulo digitados pelo usuário. Em seguida, calcule e exiba o
 perímetro do retângulo.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe a base: ");
+        float base = sc.nextFloat();
+        System.out.println("Informe a altura: ");
+        float altura = sc.nextFloat();
+        float per = 2 * (base + altura);
+        System.out.println(per);
+        sc.close();
+    }
+}
+
 34. Solicite ao usuário que insira três números decimais. Em seguida, calcule e exiba a média
 aritmética desses números.
 
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe um numero: ");
+        float num1 = sc.nextFloat();
+        System.out.println("Informe outro numero: ");
+        float num2 = sc.nextFloat();
+        System.out.println("Informe outro numero: ");
+        float num3 = sc.nextFloat();
+        float media = (num1 + num2 + num3) / 3;
+        System.out.println(media);
+        sc.close();
+    }
+}
+
 35. Peça ao usuário para digitar a sua idade e, em seguida, informe quantos meses e quantos dias ele já
 viveu (considerando um ano com 365 dias).
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe a sua idade: ");
+        int idade = sc.nextInt();
+        int meses = idade * 12;
+        int dias = idade * 365;
+        System.out.println("Você viveu " + meses + " meses e " + dias + " dias");
+        sc.close();
+    }
+}
+
 36. Receba um valor em reais e a cotação do dólar digitados pelo usuário. Em seguida, converta o valor
 para dólares e exiba o resultado.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe um valor em reais: ");
+        float real = sc.nextFloat();
+        System.out.println("Informe a cotação do dolar: ");
+        float dolar = sc.nextFloat();
+        float conversor = real / dolar;
+        System.out.println(conversor);
+        sc.close();
+    }
+}
+
 37. Solicite ao usuário para digitar um número decimal e arredonde-o para o inteiro mais próximo.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe um numero: ");
+        float num = sc.nextFloat();
+        num = Math.round(num);
+        System.out.println(num);
+        sc.close();
+    }
+}
+
 38. Receba três números inteiros digitados pelo usuário e exiba o resultado da operação (n1 + n2) *
 n3.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe um numero: ");
+        int num1 = sc.nextInt();
+        System.out.println("Informe outro numero: ");
+        int num2 = sc.nextInt();
+        System.out.println("Informe outro numero: ");
+        int num3 = sc.nextInt();
+        int op = (num1 + num2) * num3;
+        System.out.println(op);
+        sc.close();
+    }
+}
+
 39. Peça ao usuário que digite uma temperatura em graus Celsius e a converta para Fahrenheit usando
 a fórmula: Fahrenheit = (Celsius * 9/5) + 32.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe a temperatura: ");
+        float temp = sc.nextFloat();
+        float fah = temp * 9 / 5 + 32;
+        System.out.println(fah);
+        sc.close();
+    }
+}
+
+
+
+
