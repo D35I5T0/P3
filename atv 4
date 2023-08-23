@@ -1,1 +1,237 @@
+1. Escreva um programa que leia um número inteiro e verifique se ele é positivo, negativo ou igual a
+zero.
 
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe um número inteiro: ");
+        int num = sc.nextInt();
+        if (num > 0) {
+            System.out.println("é positivo");
+        }
+        else if (num == 0) {
+            System.out.println("é zero");
+        }
+        else {
+            System.out.println("é negativo");
+        }
+        sc.close();
+    }
+}
+
+2. Crie um programa que receba a idade de uma pessoa e exiba se ela é maior de idade ou menor de
+idade.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe a sua idade: ");
+        int idade = sc.nextInt();
+        if (idade >= 18) {
+            System.out.println("é maior de idade");
+        }
+        else {
+            System.out.println("é menor de idade");
+        }
+        sc.close();
+    }
+}
+
+3. Desenvolva um programa que leia dois números inteiros e mostre qual deles é o maior, ou se são
+iguais.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe dois números: ");
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        if (num1 > num2) {
+            System.out.println("o primeiro é maior");
+        }
+        else if (num1 == num2) {
+            System.out.println("eles são iguais");
+        }
+        else {
+            System.out.println("o segundo é maior");
+        }
+        sc.close();
+    }
+}
+
+4. Faça um programa que verifique se um número é par ou ímpar.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe um número: ");
+        int num = sc.nextInt();
+        if (num % 2 == 0) {
+            System.out.println("é par");
+        }
+        else {
+            System.out.println("é ímpar");
+        }
+        sc.close();
+    }
+}
+
+5. Elabore um programa que leia três notas de um aluno e calcule a média. Em seguida, exiba se o
+aluno está aprovado (média maior ou igual a 7) ou reprovado.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe as três notas: ");
+        int n1 = sc.nextInt();
+        int n2 = sc.nextInt();
+        int n3 = sc.nextInt();
+        int media = (n1 + n2 + n3) / 3;
+        if (media >= 7) {
+            System.out.println("aprovado");
+        }
+        else {
+            System.out.println("reprovado");
+        }
+        sc.close();
+    }
+}
+
+6. Crie um programa que receba o nome de duas pessoas e exiba qual delas possui o maior número
+de caracteres em seu nome.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe o nome de duas pessoas: ");
+        String nome1 = sc.nextLine();
+        String nome2 = sc.nextLine();
+        int tam1 = nome1.length();
+        int tam2 = nome2.length();
+        if (tam1 > tam2) {
+            System.out.println("o primeiro é maior");
+        }
+        else if (tam1 < tam2) {
+            System.out.println("o segundo é maior");
+        }
+        else {
+            System.out.println("são iguais");
+        }
+        sc.close();
+    }
+}
+
+7. Desenvolva um programa que leia um caractere e verifique se ele é uma vogal ou uma consoante.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe uma letra: ");
+        char l = sc.next().charAt(0);
+        if (l == 'a' || l == 'e' || l == 'i' || l == 'o' || l == 'u') {
+            System.out.println("é uma vogal");
+        }
+        else {
+            System.out.println("não é vogal");
+        }
+        sc.close();
+    }
+}
+
+8. Faça um programa que receba três números e os imprima em ordem crescente.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Informe os três numeros, diferentes entre si: ");
+        int n1 = sc.nextInt();
+        int n2 = sc.nextInt();
+        int n3 = sc.nextInt();
+        int maior, meio, menor;
+        if (n1 > n2 && n1 > n3) {
+            maior = n1;
+            if (n2 > n3) {
+                meio = n2;
+                menor = n3;
+            }
+            else {
+                meio = n3;
+                menor = n2;
+            }
+        }
+        else if (n2 > n1 && n2 > n3) {
+            maior = n2;
+           if (n2 > n3) {
+                meio = n2;
+                menor = n3;
+            }
+            else {
+                meio = n3;
+                menor = n2;
+            }
+        }
+        else {
+            maior = n3;
+           if (n1 > n2) {
+                meio = n1;
+                menor = n2;
+            }
+            else {
+                meio = n2;
+                menor = n1;
+            }
+        }
+        System.out.println(menor + " " + meio + " " + maior);
+        sc.close();
+    }
+}
+
+9. Elabore um programa que calcule o IMC (Índice de Massa Corporal) de uma pessoa, dado o peso e
+a altura. Em seguida, exiba se a pessoa está abaixo do peso, com peso normal, com sobrepeso,
+obesa ou muito obesa.
+
+
+
+10. Escreva um programa que receba um número de mês (1 a 12) e exiba o nome do mês
+correspondente.
+11. Desenvolva um programa que leia o salário de um funcionário e calcule o valor do seu aumento.
+Para salários superiores a R$ 1.500,00, o aumento deve ser de 10%. Caso contrário, o aumento é de
+15%.
+12. Receba um número inteiro do usuário e verifique se ele é divisível por 3 e por 5 ao mesmo tempo,
+exibindo uma mensagem apropriada.
+13. Peça ao usuário que insira o dia da semana (por extenso) e, em seguida, exiba uma mensagem
+informando se é um dia útil ou um fim de semana.
+14. Elabore um programa que leia um número inteiro de 1 a 5 e exiba a mensagem "Muito bom",
+"Bom", "Regular", "Insuficiente" ou "Muito insuficiente", de acordo com o valor lido, utilizando
+switch/case.
+
+15. Peça ao usuário que digite um número entre 1 e 7 e exiba o dia da semana correspondente (1 -
+Domingo, 2 - Segunda-feira, etc.).
+16. Receba um número decimal do usuário e arredonde-o para o inteiro mais próximo usando a
+estrutura de controle try/catch para tratar exceções.
+17. Peça ao usuário que insira a sua idade e verifique se ele é um bebê (0 a 1 ano), criança (1 a 12
+anos), adolescente (13 a 18 anos) ou adulto (mais de 18 anos).
+18. Peça ao usuário que insira o seu estado civil e, usando a estrutura switch/case, exiba uma
+mensagem informando se é solteiro, casado, divorciado ou viúvo.
+19. Solicite ao usuário dois números inteiros e, usando a estrutura switch/case, exiba o resultado da
+operação escolhida pelo usuário (1 - soma, 2 - subtração, 3 - multiplicação, 4 - divisão).
+20. Desenvolva um programa que leia o nome e a idade de uma pessoa. Utilize o bloco try/catch para
+garantir que a idade digitada seja um valor inteiro válido.
+21. Crie um programa que leia um valor em metros e o converta para centímetros, milímetros e
+quilômetros. Utilize o bloco try/catch para tratar possíveis exceções durante os cálculos.
