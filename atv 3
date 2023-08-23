@@ -17,17 +17,14 @@ public class Main {
 2. Peça ao usuário que digite sua idade em texto (por exemplo, "18") e converta-a em um número
 inteiro.
 
+package hw;
 import java.util.Scanner;
-public class Main {
+public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
-
-
         System.out.println("Informe a sua idade: ");
         String num = sc.nextLine();
         int result = Integer.parseInt(num);
-
-
         System.out.println("O número é " + result);
         sc.close();
     }
@@ -35,17 +32,14 @@ public class Main {
 
 3. Receba um número inteiro do usuário e converta-o em um número decimal (float).
 
+package hw;
 import java.util.Scanner;
-public class Main {
+public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
-
-
         System.out.println("Informe um número: ");
         int num = sc.nextInt();
         float result = num;
-
-
         System.out.println("O número em float é de " + result);
         sc.close();
     }
@@ -53,40 +47,31 @@ public class Main {
 
 4. Peça ao usuário para digitar dois números inteiros e exiba a soma deles.
 
+package hw;
 import java.util.Scanner;
-public class Main {
+public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
-
-
         System.out.println("Informe um número inteiro: ");
         int num1 = sc.nextInt();
         System.out.println("Informe outro número inteiro: ");
         int num2 = sc.nextInt();
-
-
         int num3 = num1 + num2;
-
-
         System.out.println("A soma dos dois valores é de " + num3);
+        sc.close();
     }
 }
 
 5. Receba um número decimal do usuário e calcule o seu quadrado.
 
+package hw;
 import java.util.Scanner;
-public class Main {
+public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
-
-
         System.out.println("Informe um número decimal: ");
         double num = sc.nextDouble();
-
-
         double result = Math.pow(num, 2);
-
-
         System.out.println("O quadrado do número é de " + result);
         sc.close();
     }
