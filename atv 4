@@ -473,14 +473,113 @@ public class App {
 18. Peça ao usuário que insira o seu estado civil e, usando a estrutura switch/case, exiba uma
 mensagem informando se é solteiro, casado, divorciado ou viúvo.
 
-
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Digite o seu estado civil: ");
+        String str = sc.nextLine();
+        switch (str) {
+            case "Solteiro": 
+                System.out.println("Solteiro");
+                break;
+            case "Casado":
+                System.out.println("Casado");
+                break;
+            case "Divorciado":
+                System.out.println("Divorciado");
+                break;
+            case "Víuvo":
+                System.out.println("Víuvo");
+                break;
+            default:
+                System.out.println("tente de novo");
+                break;
+        }
+        sc.close();
+    }
+}
 
 19. Solicite ao usuário dois números inteiros e, usando a estrutura switch/case, exiba o resultado da
 operação escolhida pelo usuário (1 - soma, 2 - subtração, 3 - multiplicação, 4 - divisão).
 
-
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        menu();
+        int op = sc.nextInt();
+        System.out.println("Digite os dois números");
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        switch (op) {
+            case 1: 
+                System.out.println(num1 + num2);
+                break;
+            case 2:
+                System.out.println(num1 - num2);
+                break;
+            case 3:
+                System.out.println(num1 * num2);
+                break;
+            case 4:
+                System.out.println(num1 / num2);
+                break;
+            default:
+                System.out.println("Escolha entre 1 e 4");
+                break;
+        }
+        sc.close();
+    }
+    public static void menu() {
+        System.out.println("1 - Soma \r\n"
+        + "2 - Subtraçao \r\n"
+        + "3 - Multiplicaçao \r\n"
+        + "4 - Divisao");
+    }
+}
 
 20. Desenvolva um programa que leia o nome e a idade de uma pessoa. Utilize o bloco try/catch para
 garantir que a idade digitada seja um valor inteiro válido.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Digite seu nome: ");
+        String str = sc.nextLine();
+        try {
+            System.out.println("Digite a sua idade ");
+            int idade = sc.nextInt();
+            System.out.println(str + " " + idade);
+        }
+        catch (Exception e) {
+            System.out.println("Não foi digitado um número inteiro");
+        }
+        sc.close();
+    }
+}
+
 21. Crie um programa que leia um valor em metros e o converta para centímetros, milímetros e
 quilômetros. Utilize o bloco try/catch para tratar possíveis exceções durante os cálculos.
+
+package hw;
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        double num = 0;
+        try {
+            System.out.println("Digite o numero em metros: ");
+            num = sc.nextDouble();
+            System.out.println("cm: " + num * 100 + " mm: " + num * 1000 + " km: " + num / 1000);
+        }
+        catch (Exception e) {
+            System.out.println("Nao foi digitado o número correto");
+        }
+        sc.close();
+    }
+}
