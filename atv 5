@@ -1,1 +1,393 @@
+1. Crie um programa que leia 5 notas de alunos e exiba quantos deles foram aprovados (nota maior
+ou igual a 7).
 
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Informe a nota dos aluno " + (i+1));
+            int n = sc.nextInt();
+            if (n >= 7) {
+                System.out.println("Aluno aprovado");
+            }
+            else {
+                System.out.println("Alunos reprovado");
+            }
+        }
+    }
+}
+
+2. Faça um programa que exiba a soma dos dígitos de um número inteiro fornecido pelo usuário.
+
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int op, total = 0;
+        do {
+            System.out.println("1 - Adicionar um número");
+            System.out.println("0 - Sair do programa");
+            op = sc.nextInt();
+            switch (op) {
+                case 1:
+                    System.out.println("Informe o número: ");
+                    int num = sc.nextInt();
+                    total = num + total;
+                    System.out.println("Total: " + total);
+                    break;
+                case 0:
+                    System.out.println("Fim de programa");
+                    break;
+                default:
+                    System.out.println("Tente de novo");
+            }
+        } while (op != 0);
+    }
+}
+
+3. Elabore um programa que leia um número inteiro e exiba todos os seus divisores.
+
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int op;
+        do {
+            System.out.println("1 - Ver divisores");
+            System.out.println("0 - Finalizar");
+            op = sc.nextInt();
+            switch (op) {
+                case 1:
+                    System.out.println("Informe o número: ");
+                    int num = sc.nextInt();
+                    for (int i = 1; i <= num; i++) {
+                        if (num % i == 0) {
+                            System.out.print(i + " ");
+                        }
+                    }
+                    System.out.println(" ");
+                    break;
+                case 0:
+                    System.out.println("Fim de programa");
+                    break;
+                default:
+                    System.out.println("Tente de novo");
+            }
+        } while (op != 0);
+    }
+}
+
+4. Desenvolva um programa que calcule a média de altura de 5 pessoas.
+
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double total = 0;
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Informe a altura da pessoa " + (i+1));
+            double n = sc.nextDouble();
+            total = n + total;
+        }
+        System.out.println("Média: " + (total / 5));
+    }
+}
+
+5. Faça um programa que exiba os números de 1 a 100, substituindo os múltiplos de 3 pela palavra
+"Fizz" e os múltiplos de 5 pela palavra "Buzz". Para os números que são múltiplos de ambos,
+utilize a palavra "FizzBuzz".
+
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double total = 0;
+        for (int i = 1; i <= 100; i++) {
+            if (i % 15 == 0){
+                System.out.println("FizzBuzz ");
+            }
+            else if (i % 3 == 0){
+                System.out.println("Fizz ");
+            }
+            else if (i % 5 == 0) {
+                System.out.println("Buzz ");
+            }
+            else {
+                System.out.println(i);
+            }
+        }
+        sc.close();
+    }
+}
+
+6. Elabore um programa que leia um número inteiro e exiba a soma dos dígitos pares desse número.
+
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int op, somaPar;
+        do {
+            System.out.println("1 - Soma dos pares");
+            System.out.println("0 - Finalizar");
+            op = sc.nextInt();
+            switch (op) {
+                case 1:
+                    System.out.println("Informe o número: ");
+                    int num = sc.nextInt();
+                    num = Math.abs(num);
+                    String numString = Integer.toString(num);
+                    int tam = numString.length();
+                    somaPar = 0;
+                    for (int i = 0; i < tam; i++) {
+                        int digito = Character.getNumericValue(numString.charAt(i));
+                        if (digito % 2 == 0) {
+                            somaPar += digito;
+                        }
+                    }
+                    System.out.println(somaPar);
+                    break;
+                case 0:
+                    System.out.println("Fim de programa");
+                    break;
+                default:
+                    System.out.println("Tente de novo");
+            }
+        } while (op != 0);
+    }
+}
+
+7. Faça um programa que leia um número inteiro e exiba o número invertido. Por exemplo, se o
+número lido for 123, o programa deve exibir 321.
+
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int op;
+        do {
+            System.out.println("1 - Número invertido");
+            System.out.println("0 - Finalizar");
+            op = sc.nextInt();
+            switch (op) {
+                case 1:
+                    System.out.println("Informe o número: ");
+                    int num = sc.nextInt();
+                    String numString = Integer.toString(num);
+                    int tam = numString.length();
+                    for (int i = tam - 1; i >= 0; i--) {
+                        int digito = Character.getNumericValue(numString.charAt(i));
+                        System.out.print(digito);
+                    }
+                    System.out.println(" ");
+                    break;
+                case 0:
+                    System.out.println("Fim de programa");
+                    break;
+                default:
+                    System.out.println("Tente de novo");
+            }
+        } while (op != 0);
+        sc.close();
+    }
+}
+
+8. Elabore um programa que calcule a soma dos números de 1 a 100 utilizando o while.
+
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = 100, total = 0;
+        while (num > 0) {
+            total += num;
+            num--;
+        }
+        System.out.println(total);
+    }
+}
+
+9. Faça um programa que calcule o produto dos números de 1 a 5 utilizando o while.
+
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = 5, mult = 1;
+        while (num > 0) {
+            mult = num * mult;
+            num--;
+        }
+        System.out.println(mult);
+    }
+}
+
+10. Crie um programa que exiba a tabuada do 9 utilizando o while.
+
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = 1;
+        while (num <= 10) {
+            System.out.println(num * 9);
+            num++;
+        }
+    }
+}
+
+11. Crie um programa que leia uma sequência de números inteiros do usuário e exiba o maior e o
+menor valor digitado. O programa deve parar de ler quando o usuário digitar o número 0
+utilizando o while.
+
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int op = 1;
+        while (op != 0) {
+            System.out.println("Digite dois números: ");
+            int n1 = sc.nextInt();
+            int n2 = sc.nextInt();
+            int maior = 0, menor = 0;
+            if (maior < n1) {
+                maior = n1;
+                menor = n2;
+            }
+            if (maior < n2){
+                maior = n2;
+                menor = n1;
+            }
+            System.out.println("Maior: " + maior + " menor: " + menor);
+            System.out.println("0 - finalizar. Digite qualquer outro número para continuar");
+            op = sc.nextInt();
+        }
+        sc.close();
+    }
+}
+
+12. Crie um programa que leia uma sequência de números inteiros do usuário e exiba a média dos
+números digitados. O programa deve parar de ler quando o usuário digitar o número -1 utilizando
+o while.
+
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int op = 1;
+        while (op != -1) {
+            System.out.println("Digite dois números: ");
+            int n1 = sc.nextInt();
+            int n2 = sc.nextInt();
+            int media = (n1 + n2) / 2;
+            System.out.println(media);
+            System.out.println("-1 - finalizar. Digite qualquer outro número para continuar");
+            op = sc.nextInt();
+        }
+        sc.close();
+    }
+}
+
+13. Faça um programa que leia um número inteiro e exiba a soma dos seus dígitos elevados ao cubo
+utilizando o while.
+
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite um número: ");
+        int n = sc.nextInt();
+        double soma = 0;
+        while (n != 0) {
+            int digito = n % 10;
+            soma += Math.pow(digito, 3);
+            n /= 10;
+        }
+        System.out.println(soma);
+        sc.close();
+    }
+}
+
+14. Faça um programa que exiba os números ímpares de 1 a 100 utilizando o while.
+
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = 0;
+        while (num < 100) {
+            if (num % 2 != 0){
+                System.out.println(num);
+            }
+            num++;
+        }
+    }
+}
+
+15. Desenvolva um programa que exiba todos os múltiplos de 3 no intervalo de 1 a 50 utilizando o
+while.
+
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = 1;
+        while (num <= 50) {
+            if (num % 3 == 0) {
+                System.out.println(num);
+            }
+            num++;
+        }
+    }
+}
+
+16. Crie um programa que leia 5 notas de alunos e exiba quantos deles foram aprovados (nota maior
+ou igual a 7) utilizando o while.
+
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int cont = 0;
+        while (cont < 5) {
+            System.out.println("Informe a nota do aluno: ");
+            int n = sc.nextInt();
+            if (n >= 7) {
+                System.out.println("Aluno aprovado");
+            }
+            else {
+                System.out.println("Aluno reprovado");
+            } 
+            cont++;
+        }
+    }
+}
+
+17. Elabore um programa que leia uma sequência de números inteiros do usuário e determine
+quantos números pares foram digitados antes do primeiro número ímpar. O programa deve parar
+de ler quando o usuário digitar o número 0 utilizando o while.
+
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int op = 1;
+        while (op != 0) {
+            System.out.println("Digite o número: ");
+            int n1 = sc.nextInt();
+            int cont = 0;
+            while (n1 != 0) {
+                if (n1 % 2 != 0) {
+                    System.out.println(cont);
+                    cont = 0;
+                }
+                cont++;
+                n1--;
+            }
+            System.out.println("0 - finalizar. Digite qualquer outro número para continuar");
+            op = sc.nextInt();
+        }
+        sc.close();
+    }
+}
